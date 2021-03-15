@@ -1,0 +1,77 @@
+<form [formGroup]="sonarQubeForm">
+  <div class="user-ragistration">
+    <div class="container register">
+      <div class="row">
+        <div class="col-md-3 register-left">
+          <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+          <h3>Welcome</h3>
+          <p>Export your Sonar analysis AND ease your development</p>
+        </div>
+        <div class="col-md-9 register-right">
+
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <h3 class="register-heading">SonarQube Issue API Exporter</h3>
+              <div class="row register-form">
+                <div class="col-md-12">
+                  <div class="form-group"
+                    [class.has-error]="sonarQubeForm.get('sonarQubeURL').hasError('invalid') && sonarQubeForm.get('sonarQubeURL').hasError('touched')">
+                    <label for="sonarQubeURL" class="control-label">SonarQube URL</label>
+                    <input id="sonarQubeURL" name="sonarQubeURL" formControlName="sonarQubeURL" type="text"
+                      class="form-control" placeholder="http://localhost:9000/" required />
+                    <span class="help-block"
+                      *ngIf="sonarQubeForm.get('sonarQubeURL').hasError('invalid') && sonarQubeForm.get('sonarQubeURL').hasError('touched')">Enter
+                      valid URL of SonarQube Hosted Machine</span>
+                  </div>
+
+
+                  <div class="form-group"
+                    [class.has-error]="sonarQubeForm.get('sonarQubeToken').hasError('invalid') && sonarQubeForm.get('sonarQubeToken').hasError('touched')">
+                    <label for="sonarQubeToken" class="control-label">SonarQube Token</label>
+                    <input id="sonarQubeToken" name="sonarQubeToken" formControlName="sonarQubeToken" type="text"
+                      class="form-control" placeholder="da5ad9e667faf116e42a8aadfb33d0b64f45bd99" required />
+                    <span class="help-block"
+                      *ngIf="sonarQubeForm.get('sonarQubeToken').hasError('invalid') && sonarQubeForm.get('sonarQubeToken').hasError('touched')">Enter
+                      valid SonarQube Token</span>
+                  </div>
+
+
+                  <div class="form-group"
+                    [class.has-error]="sonarQubeForm.get('projectKey').hasError('invalid') && sonarQubeForm.get('projectKey').hasError('touched')">
+                    <label for="projectKey" class="control-label">Project Key</label>
+                    <input id="projectKey" name="projectKey" formControlName="projectKey" type="text"
+                      class="form-control" placeholder="com.example:MyProject" required />
+                    <span class="help-block"
+                      *ngIf="sonarQubeForm.get('projectKey').hasError('invalid') && sonarQubeForm.get('projectKey').hasError('touched')">Enter
+                      valid Project Key</span>
+                  </div>
+
+                  <div class="form-group"
+                    [class.has-error]="sonarQubeForm.get('projectName').hasError('invalid') && sonarQubeForm.get('projectName').hasError('touched')">
+                    <label for="projectName" class="control-label">Project Name</label>
+                    <input id="projectName" name="projectName" formControlName="projectName" type="text"
+                      class="form-control" placeholder="MyProject" required />
+                    <span class="help-block"
+                      *ngIf="sonarQubeForm.get('projectName').hasError('invalid') && sonarQubeForm.get('projectName').hasError('touched')">Enter
+                      valid Project Name</span>
+                  </div>
+                  <button type="button" class="btn btn-primary btnRegister" (click)="export()" [disabled]="sonarQubeForm.invalid">Export</button>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          {{sonarQubeForm.value | json}}
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
