@@ -4,7 +4,7 @@ Angular based web portal to export data of SonarQube Issue API for public projec
 
 ## How to use
 
-Due to CORS, this project won't work on any browser. Follow below steps to disable CORS in a Google's Chrome Web Browser as well as export the report.
+Due to CORS, this project won't work for local projects. Follow below steps to disable CORS in a Google's Chrome Web Browser as well as export the report.
 
 - Right click on Chrome Launcher and open properties
 - Under `Shortcut` tab find `Target`
