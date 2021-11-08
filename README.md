@@ -16,6 +16,7 @@ Due to CORS, this project won't work for local projects. Follow below steps to d
 - Open `http://localhost:4200/` and feed SonarQube project details
 - Click on export to generate the excel report
 
+## Disabling CORS on recent versions of Chrome is not working at all so local export is not possible in this case.
 
 ## Angular Version
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
