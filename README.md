@@ -4,7 +4,7 @@ Angular based web portal to export data of SonarQube Issue API for public projec
 
 ## Working Portal (Only for public Sonar projects)
 
-http://152.67.11.204:10000/
+sonar.codeplex.dev
 
 ## How to use
 
