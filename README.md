@@ -2,6 +2,10 @@
 
 Angular based web portal to export data of SonarQube Issue API for public projects. 
 
+## Working Portal (Only for public Sonar projects)
+
+http://152.67.11.204:10000/
+
 ## How to use
 
 Due to CORS, this project won't work for local projects. Follow below steps to disable CORS in a Google's Chrome Web Browser as well as export the report.
